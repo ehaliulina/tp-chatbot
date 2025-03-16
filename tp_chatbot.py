@@ -63,7 +63,7 @@ def start_telegram_ai_bot():
     print("Telegram AI bot is running...")
     app.run_polling()
 
-if name == "main":
+if __name__ == "main":
     # Start the Telebot-based bot in a separate thread
     threading.Thread(target=start_telebot, daemon=True).start()
 
