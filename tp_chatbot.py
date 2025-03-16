@@ -3,7 +3,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Callb
 import openai 
 
 # Set up API keys
-TELEGRAM_BOT_TOKEN = "your_telegram_api_token_here"
+TELEGRAM_BOT_TOKEN = "7749529825:AAGePLg3YOrDYTJ0vk59QVprNf_jMScRuyE"
 OPENAI_API_KEY = "your_openai_api_key_here"
 
 openai.api_key = OPENAI_API_KEY 
