@@ -16,7 +16,7 @@ if not OPENAI_API_KEY:
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
 
 # ✅ Fixed Flask initialization
-app = Flask(name)
+app = Flask(__name__)
 
 @app.route("/")
 def home():
