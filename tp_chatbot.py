@@ -1,3 +1,28 @@
+import telebot
+from flask import Flask
+import threading
+
+TOKEN = "your_telegram_bot_token"
+bot = telebot.TeleBot(TOKEN)
+
+# Initialize Flask app
+app = Flask(name)
+
+@app.route("/")
+def home():
+    return "Bot is running!"
+
+def start_bot():
+    """Function to start the Telegram bot."""
+    bot.polling(non_stop=True)
+
+if name == "main":
+    # Start Telegram bot in a separate thread
+    threading.Thread(target=start_bot).start()
+    
+    # Start Flask web server (Render requires an HTTP server)
+    app.run(host="0.0.0.0", port=8080)
+    
 from telegram import Update
 from telegram.ext import Application, MessageHandler, filters, CallbackContext
 import openai
