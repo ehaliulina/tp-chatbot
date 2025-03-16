@@ -4,7 +4,7 @@ import openai
 
 # Set up API keys
 TELEGRAM_BOT_TOKEN = "7749529825:AAGePLg3YOrDYTJ0vk59QVprNf_jMScRuyE"
-OPENAI_API_KEY = "your_openai_api_key_here"
+OPENAI_API_KEY = "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"
 
 openai.api_key = OPENAI_API_KEY 
 
@@ -12,8 +12,9 @@ def handle_message(update: Update, context: CallbackContext):
     user_message = update.message.text 
     response = openai.ChatCompletion.create( 
         model="gpt-4", 
-        messages=[{"role": "system", "content": "You are a transfer pricing expert answering questions concisely."},
-         {"role": "user", "content": user_message}] 
+        messages=[
+            {"role": "system", "content": "You are a transfer pricing expert answering questions concisely."},
+            {"role": "user", "content": user_message}] 
          )
           reply = response["choices"][0]["message"]["content"] 
           update.message.reply_text(reply) 
